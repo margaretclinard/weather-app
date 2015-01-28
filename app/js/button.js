@@ -1,6 +1,7 @@
 
 // This is where the concatenation function begins:
 
+
 var url,		/* This is the url needed to show the next city's data */
 	zipJsoned,	/* This is the user-entered zipcode + the .json fragment */
 	userZip,    /*  Needs to be the input from the submit button */
@@ -10,10 +11,9 @@ var url,		/* This is the url needed to show the next city's data */
 function chosenZip(userZip) {
 	zipJsoned = userZip + jsonEnd;
 	url = baseURL + zipJsoned;
-}
-
 
 // Not sure how to grab the user-entered zip and put it in the chosenZip function...
+
 
 function getZip() {
     var userZip = document.getElementById("zipCode").value;

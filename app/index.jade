@@ -4,7 +4,7 @@ html(lang="en-US")
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    title Weather App
+    title Weather App 
     link(rel="stylesheet" href="/vendor/foundation/css/foundation.css")
     link(rel="stylesheet" href="/css/main.css")
 
@@ -26,7 +26,7 @@ html(lang="en-US")
             ul.right
               li.search
                 form
-                  input(type='text' id='zipcode' placeholder='Zip Code')
+                  input(type='text' id='zipCode' placeholder='Zip Code')
               li.has-button
                 a.small.button(href='#') Submit
         // End Navigation
@@ -35,7 +35,13 @@ html(lang="en-US")
         // Desktop Slider
         .hide-for-small
           #featured
+
+//- This section thinks it's a conflict.  Wasn't sure how to resolve it.
+
           h6.panel Description
+            img(src='http://placehold.it/1000x400&text=Slide Image', alt='slide image')
+//
+
         // End Desktop Slider
         // Mobile Header
         .row
@@ -49,16 +55,16 @@ html(lang="en-US")
         .row
           // Thumbnails
           .large-3.small-6.columns
-            #img2
+            img(src='http://placehold.it/250x250&text=Thumbnail')
             h6.panel Description
           .large-3.small-6.columns
-            #img3
+            img(src='http://placehold.it/250x250&text=Thumbnail')
             h6.panel Description
           .large-3.small-6.columns
-            #img4
+            img(src='http://placehold.it/250x250&text=Thumbnail')
             h6.panel Description
           .large-3.small-6.columns
-            #img5
+            img(src='http://placehold.it/250x250&text=Thumbnail')
             h6.panel Description
 
     script(src="js/main.js")
