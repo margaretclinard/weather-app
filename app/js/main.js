@@ -52,6 +52,14 @@ function display(data){
   docFragment5.appendChild(img);
   var fifthPic = document.querySelector('#img5');
   fifthPic.appendChild(docFragment5);
+
+  var docFragDay1 = document.createDocumentFragment();
+
+  var h6 = document.createElement('H6');
+  docFragDay1.appendChild(h6);
+  var text = document.createTextNode(forecastData[2].fcttext);
+  h6.appendChild(text);
+
 }
 
 
