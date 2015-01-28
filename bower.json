@@ -1,0 +1,14 @@
+{
+  "name": "weather-app",
+  "version": "0.0.0",
+  "authors": [
+    "Margaret Clinard <margaret.clinard@gmail.com>"
+  ],
+  "description": "Weather App using foundation and lodash",
+  "main": "app.js",
+  "license": "MIT",
+  "homepage": "https://github.com/margaretclinard/weather-app.git",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation#~5.5.0"
+  }
+}
