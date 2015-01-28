@@ -17,7 +17,7 @@ function getJSON(url, cb){
 
 function display(data){
   var forecastData = data.forecast.txt_forecast.forecastday;
-  var docFragment = document.createDocumentFragment(); // contains all gathered nodes
+  var docFragment = document.createDocumentFragment();   
   
   var img = document.createElement('IMG');
   img.setAttribute("src", forecastData[0].icon_url);
