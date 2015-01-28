@@ -17,6 +17,7 @@ function getJSON(url, cb){
 
 function display(data){
   var forecastData = data.forecast.txt_forecast.forecastday;
+  var docFragment = document.createDocumentFragment();   
   var docFragment1 = document.createDocumentFragment();
   var docFragment2 = document.createDocumentFragment();
   var docFragment3 = document.createDocumentFragment();
