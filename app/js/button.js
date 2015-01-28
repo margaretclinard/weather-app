@@ -1,23 +1,20 @@
 
-var baseURL = "https://api.wunderground.com/api/92a66d84a6f9aaa7/forecast10day/q/";
-var fileExt = ".json";
-var userZip = document.getElementById("myText");
+// This is where the concatenation function begins:
 
+var url,		/* This is the url needed to show the next city's data */
+	zipJsoned,	/* This is the user-entered zipcode + the .json fragment */
+	userZip,    /*  Needs to be the input from the submit button */
+	jsonEnd  = ".json",   /* The .json fragment that needs to be added */
+	baseURL = "https://api.wunderground.com/api/92a66d84a6f9aaa7/forecast10day/q/"; /*  This is the wunderground url with the zip and json chopped off */
 
-// Button needs to respond to user's click
-
-// User enters zip
-
-function addZip() {
-    var userZip = document.getElementById("zipCode").value;
-    document.getElementById("demo").innerHTML = userZip;
+function chosenZip(userZip) {
+	zipJsoned = userZip + jsonEnd;
+	url = baseURL + zipJsoned;
 }
 
 
-// .json gets added to the User's url
+// Not sure how to grab the user-entered zip and put it in the chosenZip function...
 
-var changedZip = userZip.concat(fileExt);
-
-// User's zip (w .json) gets added to the chopped url
-
-var url = baseUrl.concat(changedZip);
+function getZip() {
+    var userZip = document.getElementById("zipCode").value;
+}
