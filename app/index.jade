@@ -7,6 +7,7 @@ html(lang="en-US")
     title Weather App
     link(rel="stylesheet" href="/vendor/foundation/css/foundation.css")
 
+
   body
    .row
       .large-12.columns
@@ -25,9 +26,9 @@ html(lang="en-US")
             ul.right
               li.search
                 form
-                  input(type='search')
+                  input(type='text' id='zipcode' placeholder='Zip Code')
               li.has-button
-                a.small.button(href='#') ZIP
+                a.small.button(href='#') Submit
         // End Navigation
     .row
       .large-12.columns
