@@ -1,8 +1,6 @@
 var url = 'https://api.wunderground.com/api/2691a5c498cbd94e/forecast10day/q/37206.json';
 var data;
-getJSON(url, function(request){
-  data = request;
-});
+getJSON(url, display);
 
 function getJSON(url, cb){
   var request = new XMLHttpRequest();
@@ -17,4 +15,15 @@ function getJSON(url, cb){
   request.send();
 }
 
-var forecastData = data.forecast.txt_forecast.forecastday;
+function display(data){
+  var forecastData = data.forecast.txt_forecast.forecastday;
+  var docFragment = document.createDocumentFragment(); // contains all gathered nodes
+  
+  var img = document.createElement('IMG');
+  img.setAttribute("src", forecastData[0].icon_url);
+  docFragment.appendChild(img);
+  var mainPic = document.querySelector('#featured');
+  mainPic.appendChild(docFragment);
+
+
+}
