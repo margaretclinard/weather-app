@@ -21,93 +21,106 @@ ADAM B. SAYS IT MAKES MORE SENSE TO HAVE THE ABOVE CODE IN THE BUTTON.JS FILE IN
 
 function display(data){
   var forecastData = data.forecast.txt_forecast.forecastday;
+  var docFrag = document.createDocumentFragment();
 
-/* DO WE WANT TO MAKE THE LOCATION A VARIABLE HERE?
-  var city-state = document.createDocumentFragment();*/
-
-  var docFragPic1 = document.createDocumentFragment();
-
-  var img = document.createElement('IMG');
-  img.setAttribute("src", forecastData[0].icon_url);
-  docFragPic1.appendChild(img);
+  var img1 = document.createElement('IMG');
+  img1.setAttribute("src", forecastData[0].icon_url);
+  docFrag.appendChild(img1);
   var mainPic = document.querySelector('#featured');
-  mainPic.appendChild(docFragPic1);
-
-  var docFragPic2 = document.createDocumentFragment();
+  mainPic.appendChild(docFrag);
 
   var img = document.createElement('IMG');
   img.setAttribute("src", forecastData[2].icon_url);
-  docFragPic2.appendChild(img);
+  docFrag.appendChild(img);
   var secondPic = document.querySelector('#img2');
-  secondPic.appendChild(docFragPic2);
-
-  var docFragPic3 = document.createDocumentFragment();
+  secondPic.appendChild(docFrag);
 
   var img = document.createElement('IMG');
   img.setAttribute("src", forecastData[4].icon_url);
-  docFragPic3.appendChild(img);
+  docFrag.appendChild(img);
   var thirdPic = document.querySelector('#img3');
-  thirdPic.appendChild(docFragPic3);
-
-  var docFragPic4 = document.createDocumentFragment();
+  thirdPic.appendChild(docFrag);
 
   var img = document.createElement('IMG');
   img.setAttribute("src", forecastData[6].icon_url);
-  docFragPic4.appendChild(img);
+  docFrag.appendChild(img);
   var fourthPic = document.querySelector('#img4');
-  fourthPic.appendChild(docFragPic4);
-
-  var docFragPic5 = document.createDocumentFragment();
+  fourthPic.appendChild(docFrag);
 
   var img = document.createElement('IMG');
   img.setAttribute("src", forecastData[8].icon_url);
-  docFragPic5.appendChild(img);
+  docFrag.appendChild(img);
   var fifthPic = document.querySelector('#img5');
-  fifthPic.appendChild(docFragPic5);
-
-  var docFragDay1 = document.createDocumentFragment();
+  fifthPic.appendChild(docFrag);
 
   var h6 = document.createElement('H6');
-  docFragDay1.appendChild(h6);
+  docFrag.appendChild(h6);
   var text = document.createTextNode(forecastData[0].fcttext);
   h6.appendChild(text);
   var day1 = document.querySelector('#dayDescrip');
   day1.appendChild(text);
 
-  var docFragDay2 = document.createDocumentFragment();
 
   var h6 = document.createElement('H6');
-  docFragDay2.appendChild(h6);
+  docFrag.appendChild(h6);
   var text = document.createTextNode(forecastData[2].fcttext);
   h6.appendChild(text);
   var day2 = document.querySelector('#dayDescrip2');
   day2.appendChild(text);
 
-  var docFragDay3 = document.createDocumentFragment();
-
   var h6 = document.createElement('H6');
-  docFragDay3.appendChild(h6);
+  docFrag.appendChild(h6);
   var text = document.createTextNode(forecastData[4].fcttext);
   h6.appendChild(text);
   var day3 = document.querySelector('#dayDescrip3');
   day3.appendChild(text);
 
-  var docFragDay4 = document.createDocumentFragment();
-
   var h6 = document.createElement('H6');
-  docFragDay4.appendChild(h6);
+  docFrag.appendChild(h6);
   var text = document.createTextNode(forecastData[6].fcttext);
   h6.appendChild(text);
   var day4 = document.querySelector('#dayDescrip4');
   day4.appendChild(text);
 
-  var docFragDay5 = document.createDocumentFragment();
-
   var h6 = document.createElement('H6');
-  docFragDay5.appendChild(h6);
+  docFrag.appendChild(h6);
   var text = document.createTextNode(forecastData[8].fcttext);
   h6.appendChild(text);
   var day5 = document.querySelector('#dayDescrip5');
   day5.appendChild(text);
 
+  var h2 = document.createElement('h2');
+  docFrag.appendChild(h2);
+  var text = document.createTextNode(forecastData[0].title);
+  h2.appendChild(text);
+  var dayTitle1 = document.querySelector('#dayTitle1');
+  dayTitle1.appendChild(text);
+
+  var h2 = document.createElement('h2');
+  docFrag.appendChild(h2);
+  var text = document.createTextNode(forecastData[2].title);
+  h2.appendChild(text);
+  var dayTitle2 = document.querySelector('#dayTitle2');
+  dayTitle2.appendChild(text);
+
+  var h2 = document.createElement('h2');
+  docFrag.appendChild(h2);
+  var text = document.createTextNode(forecastData[4].title);
+  h2.appendChild(text);
+  var dayTitle3 = document.querySelector('#dayTitle3');
+  dayTitle3.appendChild(text);
+
+  var h2 = document.createElement('h2');
+  docFrag.appendChild(h2);
+  var text = document.createTextNode(forecastData[6].title);
+  h2.appendChild(text);
+  var dayTitle4 = document.querySelector('#dayTitle4');
+  dayTitle4.appendChild(text);
+
+  var h2 = document.createElement('h2');
+  docFrag.appendChild(h2);
+  var text = document.createTextNode(forecastData[8].title);
+  h2.appendChild(text);
+  var dayTitle5 = document.querySelector('#dayTitle5');
+  dayTitle5.appendChild(text);
 }
