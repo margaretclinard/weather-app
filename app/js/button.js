@@ -1,20 +1,34 @@
+document.getElementById('submit').addEventListener('click', getWeather);
 
-// This is where the concatenation function begins:
+function getWeather(){
+	var url = makeUrl();
+	getJson(url, display);
+}
 
+function getJSON(url, cb){
+  var request = new XMLHttpRequest();
+  request.open('GET', url);
 
-var url,		/* This is the url needed to show the next city's data */
-	zipJsoned,	/* This is the user-entered zipcode + the .json fragment */
-	userZip,    /*  Needs to be the input from the submit button */
-	jsonEnd  = ".json",   /* The .json fragment that needs to be added */
-	baseURL = "https://api.wunderground.com/api/92a66d84a6f9aaa7/forecast10day/q/"; /*  This is the wunderground url with the zip and json chopped off */
+  request.onload = function () {
+    if (this.status >= 200 && this.status < 400) {
+      cb(JSON.parse(this.response));
+    }
+  }
+  request.send();
+ }
 
-function chosenZip(userZip) {
-	zipJsoned = userZip + jsonEnd;
-	url = baseURL + zipJsoned;
+function makeUrl() {
+	var JSON_END = ".json",   /* The .json fragment that needs to be added */
+	    BASE_URL = "https://api.wunderground.com/api/92a66d84a6f9aaa7/forecast10day/q/"; /*  This is the wunderground url with the zip and json chopped off */
+
+	var zip = getZip();
+	var url = BASE_URL + zip + JSON_END;
+	return url;
+}
 
 // Not sure how to grab the user-entered zip and put it in the chosenZip function...
 
 
 function getZip() {
-    var userZip = document.getElementById("zipCode").value;
+  return document.getElementById("zipCode").value;
 }

@@ -39,7 +39,7 @@ module.exports = function (grunt) {
         livereload: 35729
       },
       server: {
-        open: true
+        open: false
       }
     },
 
