@@ -7,15 +7,6 @@ document.getElementById('submit').addEventListener('click', getWeather);
 var data;
 var city;
 
-
-function getWeather(){
-  clearPage();
-  var url = makeForecastUrl();
-	getJSON(url, display);
-  var url2 = makeConditionUrl();
-  getJSON(url2, createCityHeader);
-}
-
 function getJSON(url, cb){
   var request = new XMLHttpRequest();
   request.open('GET', url);
@@ -45,6 +36,28 @@ function makeConditionUrl() {
   return url;
 }
 
+function getWeather(){
+  clearPage();
+  var url = makeForecastUrl();
+	getJSON(url, display);
+  var url2 = makeConditionUrl();
+  getJSON(url2, createCityHeader);
+}
+
+function createCityHeader(city){
+  clearCityName();
+  var cityData = city.current_observation.display_location.full;
+
+  var docFragCity = document.createDocumentFragment();
+
+  var h1 = document.createElement('h1');
+  docFragCity.appendChild(h1);
+  var cityText = document.createTextNode(cityData);
+  h1.appendChild(cityText);
+  var cityFromZip = document.querySelector('#city');
+  cityFromZip.appendChild(cityText);
+}
+
 function getZip() {
   return document.getElementById('zipcode').value;
 }
@@ -69,21 +82,6 @@ function clearPage() {
   document.getElementById('img5').innerHTML = "";
   document.getElementById('dayTitle5').innerHTML = "";
   document.getElementById('dayDescrip5').innerHTML = "";
-}
-
-
-function createCityHeader(city){
-  clearCityName();
-  var cityData = city.current_observation.display_location.full;
-
-  var docFragCity = document.createDocumentFragment();
-
-  var h1 = document.createElement('h1');
-  docFragCity.appendChild(h1);
-  var cityText = document.createTextNode(cityData);
-  h1.appendChild(cityText);
-  var cityFromZip = document.querySelector('#city');
-  cityFromZip.appendChild(cityText);
 }
 
 function display(data){
