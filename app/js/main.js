@@ -12,7 +12,6 @@ function getWeather(){
   clearPage();
   var url = makeForecastUrl();
 	getJSON(url, display);
-  
   var url2 = makeConditionUrl();
   getJSON(url2, createCityHeader);
 }
@@ -31,19 +30,19 @@ function getJSON(url, cb){
 }
 
 function makeForecastUrl() {
-	var JSON_END = '.json',   
-	    BASE_URL = 'https://api.wunderground.com/api/92a66d84a6f9aaa7/forecast10day/q/'; 
-	var zip = getZip();
-	var url = BASE_URL + zip + JSON_END;
-	return url;
+  var JSON_END = '.json',
+      BASE_URL = 'https://api.wunderground.com/api/92a66d84a6f9aaa7/forecast10day/q/';
+  var zip = getZip();
+  var url = BASE_URL + zip + JSON_END;
+  return url;
 }
 
 function makeConditionUrl() {
-	var JSON_END = '.json',   
-	    BASE_URL = 'https://api.wunderground.com/api/92a66d84a6f9aaa7/conditions/q/'; 
-	var zip = getZip();
-	var url = BASE_URL + zip + JSON_END;
-	return url;
+  var JSON_END = '.json',
+      BASE_URL = 'https://api.wunderground.com/api/92a66d84a6f9aaa7/conditions/q/';
+  var zip = getZip();
+  var url = BASE_URL + zip + JSON_END;
+  return url;
 }
 
 function getZip() {
@@ -190,4 +189,4 @@ function display(data){
   h2.appendChild(text);
   var dayTitle5 = document.querySelector('#dayTitle5');
   dayTitle5.appendChild(text);
-} 
+}
