@@ -1,23 +1,32 @@
+document.getElementById("submit").addEventListener('click', getWeather);
 
-var baseURL = "https://api.wunderground.com/api/92a66d84a6f9aaa7/forecast10day/q/";
-var fileExt = ".json";
-var userZip = document.getElementById("myText");
+function getWeather(){
+	var url = makeUrl();
+	getJSON(url, display);
+}
 
+function getJSON(url, cb){
+  var request = new XMLHttpRequest();
+  request.open('GET', url);
 
-// Button needs to respond to user's click
+  request.onload = function () {
+    if (this.status >= 200 && this.status < 400) {
+      cb(JSON.parse(this.response));
+    }
+  }
+  request.send();
+ }
 
-// User enters zip
+function makeUrl() {
+	var JSON_END = ".json",   /* The .json fragment that needs to be added */
+	    BASE_URL = "https://api.wunderground.com/api/92a66d84a6f9aaa7/forecast10day/q/"; /*  Wunderground url without zip and json */
 
-function addZip() {
-    var userZip = document.getElementById("zipCode").value;
-    document.getElementById("demo").innerHTML = userZip;
+	var zip = getZip();
+	var url = BASE_URL + zip + JSON_END;
+	return url;
 }
 
 
-// .json gets added to the User's url
-
-var changedZip = userZip.concat(fileExt);
-
-// User's zip (w .json) gets added to the chopped url
-
-var url = baseUrl.concat(changedZip);
+function getZip() {
+  return document.getElementById("zipcode").value;
+}

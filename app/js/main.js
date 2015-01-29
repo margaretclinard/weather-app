@@ -1,3 +1,4 @@
+/*
 var url = 'https://api.wunderground.com/api/2691a5c498cbd94e/forecast10day/q/37206.json';
 var data;
 getJSON(url, display);
@@ -14,10 +15,12 @@ function getJSON(url, cb){
 
   request.send();
 }
+ADAM B. SAYS IT MAKES MORE SENSE TO HAVE THE ABOVE CODE IN THE BUTTON.JS FILE INSTEAD
+
+*/
 
 function display(data){
   var forecastData = data.forecast.txt_forecast.forecastday;
-
   var docFrag = document.createDocumentFragment();
 
   var img1 = document.createElement('IMG');
@@ -57,7 +60,8 @@ function display(data){
   var day1 = document.querySelector('#dayDescrip');
   day1.appendChild(text);
 
-  var h6 = document.createElement('h6');
+
+  var h6 = document.createElement('H6');
   docFrag.appendChild(h6);
   var text = document.createTextNode(forecastData[2].fcttext);
   h6.appendChild(text);
@@ -120,5 +124,3 @@ function display(data){
   var dayTitle5 = document.querySelector('#dayTitle5');
   dayTitle5.appendChild(text);
 }
-
-

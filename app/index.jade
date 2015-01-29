@@ -9,10 +9,11 @@ html(lang="en-US")
     link(rel="stylesheet" href="/css/main.css")
 
   body
+  .container
    .row
       .large-12.columns
         // Navigation
-        nav.top-bar(data-topbar='')
+        nav.top-bar
           ul.title-area
             // Title Area
             li.name
@@ -26,23 +27,37 @@ html(lang="en-US")
             ul.right
               li.search
                 form
-                  input(type='text' id='zipcode' placeholder='Zip Code')
+                  input(type='text' id="zipcode" placeholder='Zip Code')
               li.has-button
-                a.small.button(href='#') Submit
+                <div role='button' tabindex='0' class='button' id="submit">Submit</div>
         // End Navigation
-    .row
+    .row.featured
       .large-12.columns
-        // Desktop Slider
+        h1.city Nashville, TN
         .hide-for-small
           #featured
+          #dayDescrip.panel
+    .row
+      .large-12.columns.gap
+        br
+    .row.days.clearfix
           #dayTitle1
           #dayDescrip.panel
         .row
-      .large-12.columns
+     .large-12.columns
         .row
-          // Thumbnails
-          .large-3.small-6.columns
+          .large-3.small-6.columns.day
             #img2
+            #dayDescrip2.panel
+          .large-3.small-6.columns.day
+            #img3
+            #dayDescrip3.panel
+          .large-3.small-6.columns.day
+            #img4
+            #dayDescrip4.panel
+          .large-3.small-6.columns.day
+            #img5
+            #dayDescrip5.panel
             #dayTitle2
             #dayDescrip2.panel
             .large-3.small-6.columns
@@ -57,7 +72,6 @@ html(lang="en-US")
             #img5
             #dayTitle5
             #dayDescrip5.panel
-    script(src="js/main.js")
     // Footer
     footer.row
       .large-12.columns
@@ -69,3 +83,6 @@ html(lang="en-US")
             ul.inline-list.right
               li
                 a(href='http://www.wunderground.com/') Weather Underground
+   
+   script(src="js/main.js")
+   script(src="js/button.js")
