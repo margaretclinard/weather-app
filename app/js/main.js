@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 var url = 'https://api.wunderground.com/api/2691a5c498cbd94e/forecast10day/q/90210.json';
 var url2 = 'http://api.wunderground.com/api/5031721c44f8c66f/conditions/q/90210.json';
-=======
-/*
-var url = 'https://api.wunderground.com/api/2691a5c498cbd94e/forecast10day/q/37206.json';
->>>>>>> c1356dbb67aed5c0d54ffc740677156eb8854f95
 var data;
 var city;
 getJSON(url, display);
@@ -19,12 +14,9 @@ function getJSON(url, cb){
       cb(JSON.parse(this.response));
     }
   };
-
   request.send();
 }
-ADAM B. SAYS IT MAKES MORE SENSE TO HAVE THE ABOVE CODE IN THE BUTTON.JS FILE INSTEAD
 
-*/
 
 function createCityHeader(city){
   var cityData = city.current_observation.display_location.full;
