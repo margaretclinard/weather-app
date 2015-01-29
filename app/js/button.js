@@ -1,8 +1,8 @@
-document.getElementById('submit').addEventListener('click', getWeather);
+document.getElementById("submit").addEventListener('click', getWeather);
 
 function getWeather(){
 	var url = makeUrl();
-	getJson(url, display);
+	getJSON(url, display);
 }
 
 function getJSON(url, cb){
@@ -19,16 +19,14 @@ function getJSON(url, cb){
 
 function makeUrl() {
 	var JSON_END = ".json",   /* The .json fragment that needs to be added */
-	    BASE_URL = "https://api.wunderground.com/api/92a66d84a6f9aaa7/forecast10day/q/"; /*  This is the wunderground url with the zip and json chopped off */
+	    BASE_URL = "https://api.wunderground.com/api/92a66d84a6f9aaa7/forecast10day/q/"; /*  Wunderground url without zip and json */
 
 	var zip = getZip();
 	var url = BASE_URL + zip + JSON_END;
 	return url;
 }
 
-// Not sure how to grab the user-entered zip and put it in the chosenZip function...
-
 
 function getZip() {
-  return document.getElementById("zipCode").value;
+  return = document.getElementById("zipcode").value;
 }

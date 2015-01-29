@@ -1,4 +1,4 @@
-/*
+
 var url = 'https://api.wunderground.com/api/2691a5c498cbd94e/forecast10day/q/37206.json';
 var data;
 getJSON(url, display);
@@ -15,7 +15,7 @@ function getJSON(url, cb){
 
   request.send();
 }
-*/
+
 
 function display(data){
   var forecastData = data.forecast.txt_forecast.forecastday;
