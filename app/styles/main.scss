@@ -1,10 +1,57 @@
+.container {
+  background-color: #B0DFE5;
+}
+
+.city {
+  color: white;
+}
+
+#featured img {
+  width: 200px;
+  height: 200px;
+}
+
 img {
   width: 150px;
   height: 150px;
+  display: block;
+  margin: auto;
 }
 
-#featured {
-  margin-left: 400px;
-
+.featured {
+  width: 40%;
+  margin-top: 15px;
+  text-align: center;
 }
+
+
+.featured, .day {
+  background-color: steelblue;
+  border-radius: 1em;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+.day {
+ height: 350px;
+}
+
+#dayDescrip {
+  width: 70%;
+  margin: auto;
+  margin-bottom: 15px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 1em;
+  font-size: 24px;
+}
+
+#dayDescrip2.panel,
+#dayDescrip3.panel,
+#dayDescrip4.panel,
+#dayDescrip5.panel {
+  text-align: center;
+  border-radius: 1em;
+  padding: 5px;
+}
+
 
