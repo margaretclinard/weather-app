@@ -27,9 +27,9 @@ html(lang="en-US")
             ul.right
               li.search
                 form
-                  input(type='text' id='zipcode' placeholder='Zip Code')
+                  input(type='text' id="zipcode" placeholder='Zip Code')
               li.has-button
-                a.small.button(href='#') Submit
+                <div role='button' tabindex='0' class='button' id="submit">Submit</div>
         // End Navigation
     .row.featured
       .large-12.columns
@@ -60,6 +60,7 @@ html(lang="en-US")
             #img5
             #dayTitle5
             #dayDescrip5.panel
+    // Footer
     footer.row
       .large-12.columns
         hr
@@ -71,4 +72,4 @@ html(lang="en-US")
               li
                 a(href='http://www.wunderground.com/') Weather Underground
    script(src="js/main.js")
-
+   script(src="js/button.js")

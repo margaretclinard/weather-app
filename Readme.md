@@ -10,3 +10,4 @@
   "load-grunt-tasks": "^2.0.0"
 }
 ```
+# mynewproject
