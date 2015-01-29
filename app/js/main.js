@@ -13,9 +13,9 @@ function getJSON(url, cb){
     if (this.status >= 200 && this.status < 400) {
       cb(JSON.parse(this.response));
     }
-  }
+  };
   request.send();
- }
+}
 
 function createCityHeader(city){
   var cityData = city.current_observation.display_location.full;
