@@ -7,6 +7,10 @@
   font-size: 3em;
 }
 
+#dayTitle1 {
+  font-size: 2em;
+}
+
 #featured img {
   width: 200px;
   height: 200px;
@@ -23,6 +27,7 @@ img {
   width: 40%;
   margin-top: 15px;
   text-align: center;
+  color: white;
 }
 
 
@@ -33,7 +38,8 @@ img {
 }
 
 .day {
- height: 350px;
+ text-align: center;
+ color: white;
 }
 
 #dayDescrip {
