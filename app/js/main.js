@@ -1,6 +1,9 @@
 var url = 'https://api.wunderground.com/api/2691a5c498cbd94e/forecast10day/q/37206.json';
+var url2 = 'http://api.wunderground.com/api/5031721c44f8c66f/conditions/q/37206.json';
 var data;
+var city;
 getJSON(url, display);
+getJSON(url2, createCityHeader);
 
 function getJSON(url, cb){
   var request = new XMLHttpRequest();
@@ -10,9 +13,22 @@ function getJSON(url, cb){
     if (this.status >= 200 && this.status < 400) {
       cb(JSON.parse(this.response));
     }
-  }
+  };
 
   request.send();
+}
+
+function createCityHeader(city){
+  var cityData = city.current_observation.display_location.full;
+
+  var docFragCity = document.createDocumentFragment();
+
+  var h1 = document.createElement('h1');
+  docFragCity.appendChild(h1);
+  var cityText = document.createTextNode(cityData);
+  h1.appendChild(cityText);
+  var cityFromZip = document.querySelector('#city');
+  cityFromZip.appendChild(cityText);
 }
 
 function display(data){
