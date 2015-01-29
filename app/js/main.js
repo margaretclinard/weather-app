@@ -50,7 +50,7 @@ function display(data){
   var fifthPic = document.querySelector('#img5');
   fifthPic.appendChild(docFrag);
 
-   var h6 = document.createElement('H6');
+  var h6 = document.createElement('H6');
   docFrag.appendChild(h6);
   var text = document.createTextNode(forecastData[0].fcttext);
   h6.appendChild(text);
@@ -85,6 +85,40 @@ function display(data){
   var day5 = document.querySelector('#dayDescrip5');
   day5.appendChild(text);
 
+  var h2 = document.createElement('h2');
+  docFrag.appendChild(h2);
+  var text = document.createTextNode(forecastData[0].title);
+  h2.appendChild(text);
+  var dayTitle1 = document.querySelector('#dayTitle1');
+  dayTitle1.appendChild(text);
+
+  var h2 = document.createElement('h2');
+  docFrag.appendChild(h2);
+  var text = document.createTextNode(forecastData[2].title);
+  h2.appendChild(text);
+  var dayTitle2 = document.querySelector('#dayTitle2');
+  dayTitle2.appendChild(text);
+
+  var h2 = document.createElement('h2');
+  docFrag.appendChild(h2);
+  var text = document.createTextNode(forecastData[4].title);
+  h2.appendChild(text);
+  var dayTitle3 = document.querySelector('#dayTitle3');
+  dayTitle3.appendChild(text);
+
+  var h2 = document.createElement('h2');
+  docFrag.appendChild(h2);
+  var text = document.createTextNode(forecastData[6].title);
+  h2.appendChild(text);
+  var dayTitle4 = document.querySelector('#dayTitle4');
+  dayTitle4.appendChild(text);
+
+  var h2 = document.createElement('h2');
+  docFrag.appendChild(h2);
+  var text = document.createTextNode(forecastData[8].title);
+  h2.appendChild(text);
+  var dayTitle5 = document.querySelector('#dayTitle5');
+  dayTitle5.appendChild(text);
 }
 
 
