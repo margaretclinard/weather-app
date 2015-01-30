@@ -1,11 +1,9 @@
-getJSON('https://api.wunderground.com/api/92a66d84a6f9aaa7/forecast10day/q/37216.json', display);
-
-getJSON('https://api.wunderground.com/api/92a66d84a6f9aaa7/conditions/q/37216.json', createCityHeader);
+getJSON('http://api.wunderground.com/api/2691a5c498cbd94e/geolookup/conditions/forecast10day/q/autoip.json', display);
 
 document.getElementById('submit').addEventListener('click', getWeather);
 
 var data;
-var city;
+
 
 function getJSON(url, cb){
   var request = new XMLHttpRequest();
@@ -16,21 +14,12 @@ function getJSON(url, cb){
       cb(JSON.parse(this.response));
     }
   };
-
   request.send();
 }
 
 function makeForecastUrl() {
   var JSON_END = '.json',
-      BASE_URL = 'https://api.wunderground.com/api/92a66d84a6f9aaa7/forecast10day/q/';
-  var zip = getZip();
-  var url = BASE_URL + zip + JSON_END;
-  return url;
-}
-
-function makeConditionUrl() {
-  var JSON_END = '.json',
-      BASE_URL = 'https://api.wunderground.com/api/92a66d84a6f9aaa7/conditions/q/';
+      BASE_URL = 'https://api.wunderground.com/api/2691a5c498cbd94e/geolookup/conditions/forecast10day/q/';
   var zip = getZip();
   var url = BASE_URL + zip + JSON_END;
   return url;
@@ -39,34 +28,15 @@ function makeConditionUrl() {
 function getWeather(){
   clearPage();
   var url = makeForecastUrl();
-	getJSON(url, display);
-  var url2 = makeConditionUrl();
-  getJSON(url2, createCityHeader);
-}
-
-function createCityHeader(city){
-  clearCityName();
-  var cityData = city.current_observation.display_location.full;
-
-  var docFragCity = document.createDocumentFragment();
-
-  var h1 = document.createElement('h1');
-  docFragCity.appendChild(h1);
-  var cityText = document.createTextNode(cityData);
-  h1.appendChild(cityText);
-  var cityFromZip = document.querySelector('#city');
-  cityFromZip.appendChild(cityText);
-}
+  getJSON(url, display);
+ }
 
 function getZip() {
   return document.getElementById('zipcode').value;
 }
 
-function clearCityName() {
-  document.getElementById('city').innerHTML = "";
-}
-
 function clearPage() {
+  document.getElementById('city').innerHTML = "";
   document.getElementById('featured').innerHTML = "";
   document.getElementById('dayTitle1').innerHTML = "";
   document.getElementById('dayDescrip').innerHTML = "";
@@ -86,7 +56,15 @@ function clearPage() {
 
 function display(data){
   var forecastData = data.forecast.txt_forecast.forecastday;
+  var cityData = data.current_observation.display_location.full;
   var docFrag = document.createDocumentFragment();
+
+  var h1 = document.createElement('h1');
+  docFrag.appendChild(h1);
+  var cityText = document.createTextNode(cityData);
+  h1.appendChild(cityText);
+  var cityFromZip = document.querySelector('#city');
+  cityFromZip.appendChild(cityText);
 
   var img1 = document.createElement('IMG');
   img1.setAttribute("src", forecastData[0].icon_url);
